@@ -1,4 +1,4 @@
-/* Reset básico */
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,12 +6,14 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: #fdfdfd;
   line-height: 1.6;
   color: #333;
+  transition: background 0.3s, color 0.3s;
 }
 
+/* Cabeçalho */
 header {
   background: linear-gradient(45deg, #ff4081, #f50057);
   color: #fff;
@@ -28,6 +30,7 @@ header p {
   font-size: 1.2rem;
 }
 
+/* Menu */
 nav {
   background-color: #616161;
   display: flex;
@@ -50,6 +53,7 @@ nav a:hover {
   transform: scale(1.05);
 }
 
+/* Sessões */
 main {
   padding: 2rem 1rem;
 }
@@ -67,7 +71,7 @@ main {
   color: #0277bd;
 }
 
-/* Estilização da lista de matérias */
+/* Lista de matérias */
 .subject-list {
   list-style: none;
   display: flex;
@@ -90,7 +94,7 @@ main {
   background-color: #ffca28;
 }
 
-/* Botões para links */
+/* Botões */
 .button {
   display: inline-block;
   background-color: #8e24aa;
@@ -107,6 +111,7 @@ main {
   transform: scale(1.05);
 }
 
+/* Rodapé */
 footer {
   background-color: #424242;
   color: #fff;
@@ -118,7 +123,7 @@ footer {
   width: 100%;
 }
 
-/* Responsividade simples */
+/* Responsivo */
 @media (max-width: 600px) {
   nav {
     flex-direction: column;
@@ -127,4 +132,25 @@ footer {
   nav a {
     margin: 0.3rem 0;
   }
+}
+
+/* Tema Escuro */
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+body.dark-mode .section {
+  background: #1e1e1e;
+}
+
+body.dark-mode nav,
+body.dark-mode header,
+body.dark-mode footer {
+  background-color: #222;
+  color: #fff;
+}
+
+body.dark-mode .button {
+  background: linear-gradient(45deg, #3949ab, #1e88e5);
 }
