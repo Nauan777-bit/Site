@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mochila Virtual</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #f0f4f8;
+      color: #333;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ccc;
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+    }
+    input {
+      width: 70%;
+      margin-right: 10px;
+      border: 1px solid #aaa;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3498db;
+    }
+    ul {
+      margin-top: 20px;
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 10px;
+      background: white;
+      padding: 8px 12px;
+      border-radius: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 5px #ccc;
+    }
+    li button {
+      background-color: #e74c3c;
+      padding: 5px 10px;
+      font-size: 14px;
+    }
+    li button:hover {
+      background-color: #c0392b;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mochila Virtual</h1>
+  <div>
+    <input type="text" id="itemInput" placeholder="Digite o nome do item" />
+    <button onclick="adicionarItem()">Adicionar</button>
+  </div>
+  <ul id="listaMochila"></ul>
+
+  <script>
+    const mochila = [];
+
+    function atualizarLista() {
+      const lista = document.getElementById('listaMochila');
+      lista.innerHTML = '';
+      mochila.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = item;
+
+        const btnRemover = document.createElement('button');
+        btnRemover.textContent = 'Remover';
+        btnRemover.onclick = () => {
+          mochila.splice(index, 1);
+          atualizarLista();
+        };
+
+        li.appendChild(btnRemover);
+        lista.appendChild(li);
+      });
+    }
+
+    function adicionarItem() {
+      const input = document.getElementById('itemInput');
+      const valor = input.value.trim();
+      if (valor === '') {
+        alert('Por favor, digite um item.');
+        return;
+      }
+      mochila.push(valor);
+      input.value = '';
+      atualizarLista();
+    }
+
+    // Atualiza a lista inicialmente (vazia)
+    atualizarLista();
+  </script>
+</body>
+</html>
