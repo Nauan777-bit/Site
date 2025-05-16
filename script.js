@@ -1,33 +1,54 @@
-// Alerta ao clicar nas matérias com animação
+// Função de feedback visual ao clicar em matérias
 document.querySelectorAll('.subject-list li').forEach(item => {
   item.addEventListener('click', () => {
-    alert("Você clicou em " + item.textContent + "!");
-    item.style.transform = "scale(0.95)";
-    setTimeout(() => {
-      item.style.transform = "scale(1)";
-    }, 150);
+    showModal("Você clicou em: <strong>" + item.textContent + "</strong>");
+
+    item.classList.add('clicked');
+    setTimeout(() => item.classList.remove('clicked'), 200);
+
+    // Som opcional ao clicar
+    // new Audio('click.mp3').play();
   });
 });
 
-// Scroll suave ao clicar nos links do menu
+// Modal personalizado em vez de alert()
+function showModal(message) {
+  let modal = document.createElement('div');
+  modal.className = 'custom-modal';
+  modal.innerHTML = `<div class="modal-content">${message}</div>`;
+
+  document.body.appendChild(modal);
+  setTimeout(() => modal.classList.add('show'), 10);
+
+  setTimeout(() => {
+    modal.classList.remove('show');
+    setTimeout(() => document.body.removeChild(modal), 300);
+  }, 2200);
+}
+
+// Scroll suave nos links do menu
 document.querySelectorAll('nav a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
     const target = document.querySelector(link.getAttribute('href'));
-    target.scrollIntoView({ behavior: 'smooth' });
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   });
 });
 
-// Alternar tema claro/escuro
+// Alternar tema claro/escuro com segurança
 const toggleBtn = document.getElementById("toggleTheme");
-toggleBtn.addEventListener("click", () => {
-  document.body.classList.toggle("dark-mode");
-  toggleBtn.textContent = document.body.classList.contains("dark-mode")
-    ? "☀️ Tema Claro"
-    : "🌙 Tema Escuro";
-});
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    toggleBtn.textContent = document.body.classList.contains("dark-mode")
+      ? "☀️ Tema Claro"
+      : "🌙 Tema Escuro";
+  });
+}
 
-// Mensagem de boas-vindas após 1.5s
+// Mensagem de boas-vindas (sem alert intrusivo)
 setTimeout(() => {
-  alert("Bem-vindo ao meu site! 🚀");
+  showModal("Bem-vindo ao meu site! 🚀");
 }, 1500);
