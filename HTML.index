@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site Chamativo</title>
+  <!-- Link para o CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header>
+    <h1>Site Chamativo</h1>
+    <p>Feito com amor por Copilot <3</p>
+  </header>
+  
+  <nav>
+    <a href="#instagram">Instagram</a>
+    <a href="#materias">Matérias</a>
+    <a href="#colegas">Colegas</a>
+  </nav>
+  
+  <main>
+    <!-- Seção do Instagram -->
+    <section class="section" id="instagram">
+      <h2>Meu Instagram</h2>
+      <p>Clique no botão abaixo para visitar meu Instagram:</p>
+      <a class="button" href="https://www.instagram.com/seuusuario" target="_blank">Visitar Instagram</a>
+    </section>
+    
+    <!-- Seção das matérias -->
+    <section class="section" id="materias">
+      <h2>Matérias</h2>
+      <p>Selecione uma matéria:</p>
+      <ul class="subject-list">
+        <li>S.O.</li>
+        <li>A.M.C.</li>
+        <li>N.R.</li>
+        <li>G.T.</li>
+        <li>Prog. WEB</li>
+        <li>Log.Pr</li>
+        <li>HTML/CSS</li>
+        <li>POO/JAVA</li>
+      </ul>
+    </section>
+    
+    <!-- Seção dos colegas -->
+    <section class="section" id="colegas">
+      <h2>Sites dos Colegas</h2>
+      <p>Acesse os sites dos meus quatro colegas:</p>
+      <div>
+        <a class="button" href="https://www.sitecolega1.com" target="_blank">Colega 1</a>
+        <a class="button" href="https://www.sitecolega2.com" target="_blank">Colega 2</a>
+        <a class="button" href="https://www.sitecolega3.com" target="_blank">Colega 3</a>
+        <a class="button" href="https://www.sitecolega4.com" target="_blank">Colega 4</a>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
+  </footer>
+  
+  <!-- Link para o JavaScript externo -->
+  <script src="script.js"></script>
+</body>
+</html>
