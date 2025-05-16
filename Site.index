@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Tech</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Portal Tech</h1>
+  </header>
+
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Busque por uma matéria...">
+    <i class="fas fa-search"></i>
+  </div>
+
+  <div class="cards-container"></div>
+
+  <footer>
+    <a href="https://instagram.com/nauanloures" target="_blank" class="instagram-link">
+      <i class="fab fa-instagram"></i> @nauanloures
+    </a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
