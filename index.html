@@ -2,63 +2,76 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Site Chamativo</title>
-  <!-- Link para o CSS externo -->
+  <!-- Link para a folha de estilos externa -->
   <link rel="stylesheet" href="styles.css">
+  <!-- Importando fonte do Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap" rel="stylesheet">
 </head>
 <body>
-
   <header>
-    <h1>Site Chamativo</h1>
-    <p>Feito com amor por Copilot <3</p>
+    <div class="header-container">
+      <h1>Site Chamativo</h1>
+      <p>Feito com amor por Copilot <3</p>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#materias">Matérias</a></li>
+        <li><a href="#colegas">Colegas</a></li>
+      </ul>
+    </nav>
   </header>
-  
-  <nav>
-    <a href="#instagram">Instagram</a>
-    <a href="#materias">Matérias</a>
-    <a href="#colegas">Colegas</a>
-  </nav>
   
   <main>
     <!-- Seção do Instagram -->
-    <section class="section" id="instagram">
-      <h2>Meu Instagram</h2>
-      <p>Clique no botão abaixo para visitar meu Instagram:</p>
-      <a class="button" href="https://www.instagram.com/seuusuario" target="_blank">Visitar Instagram</a>
+    <section id="instagram" class="section">
+      <div class="content-container">
+        <h2>Meu Instagram</h2>
+        <p>Conecte-se comigo no Instagram e acompanhe minhas atualizações e momentos.</p>
+        <a class="button" href="https://www.instagram.com/seuusuario" target="_blank">Visitar Instagram</a>
+      </div>
     </section>
     
-    <!-- Seção das matérias -->
-    <section class="section" id="materias">
-      <h2>Matérias</h2>
-      <p>Selecione uma matéria:</p>
-      <ul class="subject-list">
-        <li>S.O.</li>
-        <li>A.M.C.</li>
-        <li>N.R.</li>
-        <li>G.T.</li>
-        <li>Prog. WEB</li>
-        <li>Log.Pr</li>
-        <li>HTML/CSS</li>
-        <li>POO/JAVA</li>
-      </ul>
+    <!-- Seção de Matérias -->
+    <section id="materias" class="section">
+      <div class="content-container">
+        <h2>Matérias</h2>
+        <p>Selecione uma das matérias:</p>
+        <ul class="subject-list">
+          <li>S.O.</li>
+          <li>A.M.C.</li>
+          <li>N.R.</li>
+          <li>G.T.</li>
+          <li>Prog. WEB</li>
+          <li>Log.Pr</li>
+          <li>HTML/CSS</li>
+          <li>POO/JAVA</li>
+        </ul>
+      </div>
     </section>
     
-    <!-- Seção dos colegas -->
-    <section class="section" id="colegas">
-      <h2>Sites dos Colegas</h2>
-      <p>Acesse os sites dos meus quatro colegas:</p>
-      <div>
-        <a class="button" href="https://www.sitecolega1.com" target="_blank">Colega 1</a>
-        <a class="button" href="https://www.sitecolega2.com" target="_blank">Colega 2</a>
-        <a class="button" href="https://www.sitecolega3.com" target="_blank">Colega 3</a>
-        <a class="button" href="https://www.sitecolega4.com" target="_blank">Colega 4</a>
+    <!-- Seção dos Sites dos Colegas -->
+    <section id="colegas" class="section">
+      <div class="content-container">
+        <h2>Sites dos Colegas</h2>
+        <p>Acesse os sites dos meus colegas:</p>
+        <div class="button-group">
+          <a class="button" href="https://www.sitecolega1.com" target="_blank">Colega 1</a>
+          <a class="button" href="https://www.sitecolega2.com" target="_blank">Colega 2</a>
+          <a class="button" href="https://www.sitecolega3.com" target="_blank">Colega 3</a>
+          <a class="button" href="https://www.sitecolega4.com" target="_blank">Colega 4</a>
+        </div>
       </div>
     </section>
   </main>
   
   <footer>
-    <p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
+    <div class="footer-container">
+      <p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
+    </div>
   </footer>
   
   <!-- Link para o JavaScript externo -->
