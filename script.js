@@ -50,5 +50,19 @@ if (toggleBtn) {
 
 // Mensagem de boas-vindas (sem alert intrusivo)
 setTimeout(() => {
-  showModal("Bem-vindo ao meu site! 🚀");
-}, 1500);
+function showModal(Bem vindo(a) ao meu site!) {
+  // Evita mostrar vários modais ao mesmo tempo
+  if (document.querySelector('.custom-modal.show')) return;
+
+  let modal = document.createElement('div');
+  modal.className = 'custom-modal';
+  modal.innerHTML = `<div class="modal-content">${message}</div>`;
+
+  document.body.appendChild(modal);
+  setTimeout(() => modal.classList.add('show'), 10);
+
+  setTimeout(() => {
+    modal.classList.remove('show');
+    setTimeout(() => document.body.removeChild(modal), 300);
+  }, 2200);
+}
