@@ -28,6 +28,11 @@
       margin-right: 10px;
       border: 1px solid #aaa;
       border-radius: 5px;
+      transition: box-shadow 0.3s ease;
+    }
+    input:focus {
+      outline: none;
+      box-shadow: 0 0 5px #2980b9;
     }
     button {
       background-color: #2980b9;
@@ -35,6 +40,7 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
     button:hover {
       background-color: #3498db;
@@ -42,6 +48,7 @@
     ul {
       margin-top: 20px;
       padding-left: 20px;
+      transition: all 0.3s ease;
     }
     li {
       margin-bottom: 10px;
@@ -52,61 +59,45 @@
       justify-content: space-between;
       align-items: center;
       box-shadow: 0 0 5px #ccc;
+      opacity: 1;
+      transition: opacity 0.3s ease;
+    }
+    li.removendo {
+      opacity: 0;
+      height: 0;
+      margin: 0;
+      padding: 0 12px;
+      overflow: hidden;
+      transition: opacity 0.3s ease, height 0.3s ease, margin 0.3s ease, padding 0.3s ease;
     }
     li button {
       background-color: #e74c3c;
       padding: 5px 10px;
       font-size: 14px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
     li button:hover {
       background-color: #c0392b;
+    }
+    #contador {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #555;
     }
   </style>
 </head>
 <body>
   <h1>Mochila Virtual</h1>
   <div>
-    <input type="text" id="itemInput" placeholder="Digite o nome do item" />
-    <button onclick="adicionarItem()">Adicionar</button>
+    <input type="text" id="itemInput" placeholder="Digite o nome do item" aria-label="Digite o nome do item" />
+    <button id="btnAdicionar">Adicionar</button>
   </div>
   <ul id="listaMochila"></ul>
+  <p id="contador">Total de itens: 0</p>
 
-  <script>
-    const mochila = [];
-
-    function atualizarLista() {
-      const lista = document.getElementById('listaMochila');
-      lista.innerHTML = '';
-      mochila.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.textContent = item;
-
-        const btnRemover = document.createElement('button');
-        btnRemover.textContent = 'Remover';
-        btnRemover.onclick = () => {
-          mochila.splice(index, 1);
-          atualizarLista();
-        };
-
-        li.appendChild(btnRemover);
-        lista.appendChild(li);
-      });
-    }
-
-    function adicionarItem() {
-      const input = document.getElementById('itemInput');
-      const valor = input.value.trim();
-      if (valor === '') {
-        alert('Por favor, digite um item.');
-        return;
-      }
-      mochila.push(valor);
-      input.value = '';
-      atualizarLista();
-    }
-
-    // Atualiza a lista inicialmente (vazia)
-    atualizarLista();
-  </script>
+  <script src="mochila.js"></script>
 </body>
 </html>
