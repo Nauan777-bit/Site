@@ -105,6 +105,12 @@ main {
   background-color: #ff80ab;
 }
 
+/* Clique animado */
+.subject-list li.clicked {
+  transform: scale(0.92);
+  transition: transform 0.15s ease-in-out;
+}
+
 /* Botões */
 .button {
   display: inline-block;
@@ -133,6 +139,31 @@ footer {
   width: 100%;
   backdrop-filter: blur(4px);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Modal personalizado */
+.custom-modal {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1rem;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.custom-modal.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+.modal-content strong {
+  color: #00e5ff;
 }
 
 /* Responsivo */
